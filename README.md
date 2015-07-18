@@ -1,6 +1,6 @@
-# Mole Simulator
+# Mole Simulator 2
 
-[LIVE DEMO](http://xpl.github.io/mole/)
+[LIVE DEMO](http://xplozive.github.io/mole/)
 
 ## Running locally
 
