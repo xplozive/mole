@@ -1,4 +1,6 @@
-# Mole Simulator 2
+# Mole Simulator (3D fork)
+
+Original version: https://github.com/xpl/mole ([LIVE DEMO](http://xpl.github.io/mole/))
 
 [LIVE DEMO](http://xplozive.github.io/mole/)
 
