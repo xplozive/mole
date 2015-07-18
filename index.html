@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-        <title>Mole Simulator 2</title>
+        <title>Mole Simulator 3D</title>
 
         <link rel="shortcut icon" href="http://www.gameniacgames.com/uploads/2/7/2/1/2721050/mole.ico">
         <!--<link rel="stylesheet" href="node_modules/useless/client/UI.error.css" type="text/css">-->
@@ -37,6 +37,15 @@
                 0%    { -webkit-transform: scale(0.9); opacity: 0; }
                 50%   { -webkit-transform: scale(1);   opacity: 1; }
                 100%  { -webkit-transform: scale(1.1); opacity: 0; } }
+
+            @keyframes rotate {
+                0%    { transform: rotate3d(-1,-1,-1,-50deg); }
+                100%  { transform: rotate3d(-1,-1,-1, 50deg); } }
+
+
+            @-webkit-keyframes rotate {
+                0%    { -webkit-transform: rotate3d(-1,-1,-1,-50deg); }
+                100%  { -webkit-transform: rotate3d(-1,-1,-1, 50deg); } }
 
             * { -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards;
                 cursor: default; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
@@ -77,6 +86,8 @@
 
             .notice.active { -webkit-animation: notice 5s linear; animation: notice 5s linear; }
 
+            .rotate { -webkit-animation: rotate 5s infinite; animation: rotate 5s infinite;
+                      -webkit-animation-direction: alternate; animation-direction: alternate; }
         </style>
 
         <script>
@@ -196,14 +207,18 @@
     </head>
     <body class="menu">
         <div class="main-menu center" style="display:none;">
-            <h1>Mole Simulator 2</h1>
-            <a class="btn play" href="javascript:{}">Play</a>
-            <a class="btn exit" href="http://pestkill.org/wp-content/uploads/HowtoGetRidofMolesinYard.jpg">Exit</a>
+            <div class="rotate">
+                <h1>Mole Simulator 3D</h1>
+                <a class="btn rotate play" href="javascript:{}">Play</a>
+                <a class="btn rotate exit" href="http://pestkill.org/wp-content/uploads/HowtoGetRidofMolesinYard.jpg">Exit</a>
+            </div>
         </div>
-        <div class="sound-notice notice center" style="display:none;">Turn speakers on</div>
+        <div class="sound-notice notice center" style="display:none;"><div class="rotate">Turn speakers on</div></div>
         <div class="controls" style="display:none;">
-            <div><div class="btn key w" data-key="w">W</div></div>
-            <div><div class="btn key a" data-key="a">A</div><div class="btn key s" data-key="s">S</div><div class="btn key d" data-key="d">D</div></div>
+            <div class="rotate">
+                <div><div class="btn key w" data-key="w">W</div></div>
+                <div><div class="btn key a" data-key="a">A</div><div class="btn key s" data-key="s">S</div><div class="btn key d" data-key="d">D</div></div>
+            </div>
         </div>
     </body>
 </html>
